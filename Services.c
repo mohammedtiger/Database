@@ -8,7 +8,6 @@
 #include "main.h"
 #include "Services.h"
 
-static struct termios old, new;
 
 void read_scanf_name(char *name , int size)
 {
@@ -26,18 +25,5 @@ void read_scanf_name(char *name , int size)
 			index=-1;
 		}
 	}
-}
-
-int Searhing (int *data , int *search , int size)
-{
-	int rc = 0;
-	for (int index = 0; index < size ; index ++)
-	{
-		if (*data == search[index])
-		{
-			rc = 1;
-		}
-	}
-	return rc;
 }
 
