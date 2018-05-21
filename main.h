@@ -14,10 +14,13 @@
 
 #define END_NAME			 '\n'
 #define MAX_NAME_SIZE 		 20
+#define MAX_EMPLOYEE_NUM 	 5
 
 enum
 {
-	GOTO_HIRE = 1
+	GOTO_CANCEL=0 ,
+	GOTO_HIRE ,
+	GOTO_LOG
 };
 
 typedef struct manager {
@@ -48,11 +51,13 @@ typedef struct main_stepup
 typedef struct company St_company ;
 struct company
 {
-	St_employee employee;
+	St_employee employee[MAX_EMPLOYEE_NUM];
 	St_main 	main;
 	St_manager  manager;
+	int 		employee_counter;
 	void 		(*company_config)(St_company *company);
 	void 		(*company_hire)(St_company *company);
+	void 		(*company_log)(St_company *company);
 	int 		(*company_cond)(St_company *company);
 
 };

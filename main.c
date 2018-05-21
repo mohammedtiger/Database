@@ -6,17 +6,14 @@
  */
 #include "main.h"
 
-St_company HossamCompany;
-St_company AdelCompany;
+St_company HossamCompany = {.employee_counter = 0};
 
 int main ()
 {
 
 	companys_name(&HossamCompany);
-	companys_name(&AdelCompany);
 
 	HossamCompany.company_config(&HossamCompany);
-	HossamCompany.company_config(&AdelCompany);
 
 	for(;;)
 	{
@@ -24,10 +21,7 @@ int main ()
 
 		HossamCompany.company_hire(&HossamCompany);
 
-		HossamCompany.company_cond(&AdelCompany);
-
-		HossamCompany.company_hire(&AdelCompany);
-
+		HossamCompany.company_log(&HossamCompany);
 	}
 
 	return 0;
